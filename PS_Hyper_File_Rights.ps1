@@ -26,7 +26,7 @@ else
 
 if( -not $vm_name ){
 	
-	"USAGE: " + $0  + "-path_with_my_vhd C:\VMS\MY_VM -vm_name name_of_vm [-debug `$true] }"
+	"USAGE: " + $0  + "-PATH_with_my_VHDS C:\VMS\MY_VM -vm_name name_of_vm [-debug `$true] }"
 	"VM Name not given: Select one from this list: "
 get-vm | select name,VMid
 
