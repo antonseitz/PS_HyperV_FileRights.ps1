@@ -12,7 +12,7 @@ param(
 
 if( -not $path_with_vhd ){
 	
-"USAGE: " + $0  + "-path_with_my_vhd C:\VMS\MY_VM [-debug `$true] }"
+"USAGE: " + $0  + "-path_with_my_vhd C:\VMS\MY_VM -vm_name name_of_vm [-debug `$true] }"
 	exit
 
 }
@@ -25,6 +25,8 @@ else
 
 
 if( -not $vm_name ){
+	
+	"USAGE: " + $0  + "-path_with_my_vhd C:\VMS\MY_VM -vm_name name_of_vm [-debug `$true] }"
 	"VM Name not given: Select one from this list: "
 get-vm | select name,VMid
 
@@ -47,8 +49,8 @@ icacls.exe $path_with_vhd /grant:r "VORDEFINIERT\Administratoren:(CI)(OI)(F)"
 icacls.exe $path_with_vhd /remove "VORDEFINIERT\Hyper-v-Administratoren"
 icacls.exe $path_with_vhd /grant:r "VORDEFINIERT\Hyper-v-Administratoren:(CI)(OI)(F)"
 
-icacls.exe $path_with_vhd /remove "NT-AUTORITÄT\SYSTEM"
-icacls.exe $path_with_vhd /grant:r "NT-AUTORITÄT\SYSTEM:(CI)(OI)(F)"
+icacls.exe $path_with_vhd /remove "NT-AUTORITï¿½T\SYSTEM"
+icacls.exe $path_with_vhd /grant:r "NT-AUTORITï¿½T\SYSTEM:(CI)(OI)(F)"
 
 
 
